@@ -1,6 +1,4 @@
-# Scoop Bleeding Edge
-
-[![Tests](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/ci.yml/badge.svg)](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/ci.yml) [![Excavator](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/excavator.yml/badge.svg)](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/excavator.yml)
+# Scoop Bleeding Edge [![Tests](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/ci.yml/badge.svg)](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/ci.yml) [![Excavator](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/excavator.yml/badge.svg)](https://github.com/Featyre/Scoop-BleedingEdge/actions/workflows/excavator.yml)
 
 Portable/Non-portable Bleeding Edge applications packages using [Scoop](https://scoop.sh), the Windows command-line installer.
 
