@@ -1,12 +1,12 @@
 {
-    "version": "5.2.0-prealpha-148a5e9bb7",
+    "version": "5.1.0-8042604920",
     "description": "A free digital painting application",
     "homepage": "https://krita.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://binary-factory.kde.org/job/Krita_Nightly_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-5.2.0-prealpha-148a5e9bb7-setup.exe#/dl.7z",
-            "hash": "BF5CE747143AA71164FB4CEDEC8CE03F4E5A4D07B7A8F81C32B3843ADD507BFC"
+            "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-5.1.0-8042604920-setup.exe#/dl.7z",
+            "hash": "0CDA1A96FFCDFB3F177373DEAD21A59FE7C1A2DFA20B4D969C240B7E2F5D20CA"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\uninstall.exe.nsis\" -Recurse -Force",
@@ -21,13 +21,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://binary-factory.kde.org/job/Krita_Nightly_Windows_Build/",
-        "regex": "krita-nightly-x64-([0-9.]+\\-*\\w*\\-[0-9\\w]+).*"
+        "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/",
+        "regex": "krita-nightly-x64-([0-9.]+\\-[0-9\\w]+).*"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://binary-factory.kde.org/job/Krita_Nightly_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-$version-setup.exe#/dl.7z"
+                "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-$version-setup.exe#/dl.7z"
             }
         },
         "hash": {
