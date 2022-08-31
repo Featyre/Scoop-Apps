@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "Featyre/Scoop-BleedingEdge:main"
+    [String]$upstream = "Featyre/Scoop-BleedingEdge:master"
 )
 
 if(!$env:SCOOP_HOME) { $env:SCOOP_HOME = Resolve-Path (scoop prefix scoop) }
