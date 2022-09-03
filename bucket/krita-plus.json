@@ -29,9 +29,6 @@
             "64bit": {
                 "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-$version-setup.exe#/dl.7z"
             }
-        },
-        "hash": {
-            "url": "$url.sha256"
         }
     }
 }
