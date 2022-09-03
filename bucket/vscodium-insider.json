@@ -1,0 +1,67 @@
+{
+    "version": "1.71.0.22243-insider",
+    "description": "[Testing manifest warning!] Binary releases of VS Code without MS branding/telemetry/licensing.",
+    "homepage": "https://github.com/VSCodium/vscodium",
+    "license": "MIT",
+    "notes": [
+        "Testing manifest! May not work!",
+        "Add VSCodium as a context menu option by running: '$dir\\install-context.reg'",
+        "For file associations, run '$dir\\install-associations.reg'"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/1.71.0.22243-insider/VSCodium-win32-x64-1.71.0.22243-insider.zip",
+            "hash": "EAA7F8AC736F3D14EB0F45BF31379BD46332F4F60820BF9F54800A9E43116658"
+        },
+        "32bit": {
+            "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/1.71.0.22243-insider/VSCodium-win32-ia32-1.71.0.22243-insider.zip",
+            "hash": "5C69E69BFD0F7FE1FEA072E32758906388E03880BD6B2C67D0D2632B93D1BDF9"
+        }
+    },
+    "env_add_path": "bin",
+    "shortcuts": [
+        [
+            "VSCodium - Insiders.exe",
+            "VSCodium - Insiders"
+        ]
+    ],
+    "post_install": [
+        "$dirpath = \"$dir\".Replace('\\', '\\\\')",
+        "$exepath = \"$dir\\VSCodium - Insiders.exe\".Replace('\\', '\\\\')",
+        "'install-associations', 'uninstall-associations', 'install-context', 'uninstall-context' | ForEach-Object {",
+        "  if (Test-Path \"$bucketsdir\\extras\\scripts\\vscode\\$_.reg\") {",
+        "    $content = Get-Content \"$bucketsdir\\extras\\scripts\\vscode\\$_.reg\"",
+        "    $content = $content.Replace('$codedir', $dirpath)",
+        "    $content = $content.Replace('$code', $exepath)",
+        "    $content = $content.Replace('&Code', '&VSCodium - Insiders')",
+        "    if ($global) {",
+        "      $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "    }",
+        "    $content | Set-Content -Path \"$dir\\$_.reg\"",
+        "  }",
+        "}",
+        "if (!(Test-Path \"$dir\\data\\extensions\") -and (Test-Path \"$env:USERPROFILE\\.vscode-oss\\extensions\")) {",
+        "    info '[Portable Mode] Copying extensions...'",
+        "    Copy-Item \"$env:USERPROFILE\\.vscode-oss\\extensions\" \"$dir\\data\" -Recurse",
+        "}",
+        "if (!(Test-Path \"$dir\\data\\user-data\") -and (Test-Path \"$env:AppData\\VSCodium\")) {",
+        "    info '[Portable Mode] Copying user data...'",
+        "    Copy-Item \"$env:AppData\\VSCodium\" \"$dir\\data\\user-data\" -Recurse",
+        "}"
+    ],
+    "persist": "data",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/$version/VSCodium-win32-x64-$version-insider.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/$version/VSCodium-win32-ia32-$version-insider.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
