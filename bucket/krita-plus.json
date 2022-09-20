@@ -1,12 +1,12 @@
 {
-    "version": "5.1.1-fa5e1f08b5",
+    "version": "5.1.1-c3df24efc2",
     "description": "A free digital painting application",
     "homepage": "https://krita.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-5.1.1-fa5e1f08b5-setup.exe#/dl.7z",
-            "hash": "3886aac27fdbaddc1ba892257249367a2071f8582216886b76484904f44fbfc7"
+            "url": "https://binary-factory.kde.org/job/Krita_Stable_Windows_Build/lastSuccessfulBuild/artifact/krita-nightly-x64-5.1.1-c3df24efc2-setup.exe#/dl.7z",
+            "hash": "c419bd51eaf91999b50fb1f069de9ea1ceaeaa1e28f2bda036bd3beb597a9f43"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\uninstall.exe.nsis\" -Recurse -Force",
